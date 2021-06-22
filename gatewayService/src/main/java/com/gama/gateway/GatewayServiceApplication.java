@@ -2,9 +2,12 @@ package com.gama.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
+
+import reactor.core.publisher.Mono;
 
 @SpringBootApplication
 public class GatewayServiceApplication {
@@ -34,5 +37,14 @@ public class GatewayServiceApplication {
 								.uri("http://httpbin.org"))
 
 				.route("productAll", r -> r.path("/rest/allProducts").uri("http://localhost:8890")).build();
+	}
+
+	@Bean
+	public GlobalFilter postGlobalFilter() {
+		return (exchange, chain) -> {
+			return chain.filter(exchange).then(Mono.fromRunnable(() -> {
+				System.out.println("Global Post Filter executed");
+			}));
+		};
 	}
 }
