@@ -1,10 +1,10 @@
-package com.gama.ecom;
+package com.gama.config;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CustomerServiceApplicationTests {
+class ConfigurationServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

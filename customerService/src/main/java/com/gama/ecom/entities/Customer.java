@@ -22,7 +22,7 @@ public class Customer implements Serializable{
 	private String firstName;
 	
 	@Column(name="last_name")
-	private float lastName	;
+	private String lastName	;
 	
 	@Column(name="email")
 	private String email;
@@ -55,11 +55,11 @@ public class Customer implements Serializable{
 		this.firstName = firstName;
 	}
 
-	public float getLastName() {
+	public String getLastName() {
 		return lastName;
 	}
 
-	public void setLastName(float lastName) {
+	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
