@@ -9,8 +9,9 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
+
+
 @SpringBootApplication
-//@EnableJpaRepositories("com.gama.ecom.repo")
 public class ProductServiceApplication {
 
 	public static void main(String[] args) {
