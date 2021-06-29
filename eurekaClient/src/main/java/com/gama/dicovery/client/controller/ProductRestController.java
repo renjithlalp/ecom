@@ -39,7 +39,6 @@ public class ProductRestController {
 	@GetMapping("/products")
 	@CircuitBreaker(name = "productsC", fallbackMethod = "productAllFallBack")
 	public List getProducts() {
-
 		return productClient.getAllProduct();
 	}
 
